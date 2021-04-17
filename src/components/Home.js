@@ -3,6 +3,7 @@ import Button from './common/Button';
 
 const Home = () => {
   console.log('Home 컴포넌트 호출');
+  
   const [number, setNumber] = useState(0);
 
   const handleClick = () => {

@@ -8,6 +8,7 @@ import About from './components/About';
 
 function App() {
   console.log('App 컴포넌트 호출');
+  
   return (
     <Router>
       <div>
