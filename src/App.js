@@ -5,7 +5,8 @@ import Nav from './components/Nav';
 import NavItem from './components/NavItem';
 import Main from './components/Main';
 import Home from './components/Home';
-import About from './components/About';
+import Query from './components/Query';
+import Redux from './components/Redux';
 
 const queryClient = new QueryClient();
 
@@ -18,12 +19,16 @@ function App() {
         <div>
           <Nav>
             <NavItem path="/">Home</NavItem>
-            <NavItem path="/about">About</NavItem>
+            <NavItem path="/query">Query</NavItem>
+            <NavItem path="/redux">Redux</NavItem>
           </Nav>
           <Main>
             <Switch>
-              <Route path="/about">
-                <About />
+              <Route path="/query">
+                <Query />
+              </Route>
+              <Route path="/redux">
+                <Redux />
               </Route>
               <Route path="/">
                 <Home />

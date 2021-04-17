@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import Button from './common/Button';
 
-const About = () => {
-  console.log('About 컴포넌트 호출');
+const Query = () => {
+  console.log('Query 컴포넌트 호출');
 
   const [like, setLike] = useState(0);
 
@@ -31,4 +31,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default Query;
