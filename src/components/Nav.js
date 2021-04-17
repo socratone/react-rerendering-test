@@ -19,6 +19,8 @@ const List = styled.ul`
 `;
 
 const Nav = ({ children }) => {
+  console.log('Nav 컴포넌트 호출');
+  
   return (
     <Container>
       <List>{children}</List>

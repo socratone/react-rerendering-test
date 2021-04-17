@@ -1,12 +1,20 @@
-import React from 'react';
-import styled from 'styled-components'
+import React, { useState } from 'react';
+import Button from './common/Button';
 
 const Home = () => {
-  return (  
+  console.log('Home 컴포넌트 호출');
+  const [number, setNumber] = useState(0);
+
+  const handleClick = () => {
+    setNumber(number + 1);
+  }
+
+  return (
     <>
-      home
+      <p>{number}</p>
+      <Button onClick={handleClick}>Plus</Button>
     </>
   );
-}
- 
+};
+
 export default Home;

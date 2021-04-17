@@ -12,6 +12,8 @@ const Item = styled.li`
 `
 
 const NavItem = ({ path, children }) => {
+  console.log('NavItem 컴포넌트 호출')
+
   const history = useHistory();
 
   const handleClick = () => {
