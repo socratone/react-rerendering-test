@@ -8,6 +8,7 @@ import Main from './components/Main';
 import Home from './components/Home';
 import Query from './components/Query';
 import Redux from './components/Redux';
+import Memo from './components/Memo';
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ function App() {
               <NavItem path="/">Home</NavItem>
               <NavItem path="/query">Query</NavItem>
               <NavItem path="/redux">Redux</NavItem>
+              <NavItem path="/memo">Memo</NavItem>
             </Nav>
             <Main>
               <Switch>
@@ -31,6 +33,9 @@ function App() {
                 </Route>
                 <Route path="/redux">
                   <Redux />
+                </Route>
+                <Route path="/memo">
+                  <Memo />
                 </Route>
                 <Route path="/">
                   <Home />
