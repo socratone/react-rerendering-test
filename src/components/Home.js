@@ -7,13 +7,13 @@ const Home = () => {
 
   const handleClick = () => {
     setNumber(number + 1);
-  }
+  };
 
   return (
-    <>
+    <div>
       <p>{number}</p>
       <Button onClick={handleClick}>Plus</Button>
-    </>
+    </div>
   );
 };
 
