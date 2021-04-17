@@ -1,6 +1,7 @@
-import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { Provider } from 'react-redux';
+import store from './redux/store';
 import Nav from './components/Nav';
 import NavItem from './components/NavItem';
 import Main from './components/Main';
@@ -14,30 +15,32 @@ function App() {
   console.log('App 컴포넌트 호출');
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <Router>
-        <div>
-          <Nav>
-            <NavItem path="/">Home</NavItem>
-            <NavItem path="/query">Query</NavItem>
-            <NavItem path="/redux">Redux</NavItem>
-          </Nav>
-          <Main>
-            <Switch>
-              <Route path="/query">
-                <Query />
-              </Route>
-              <Route path="/redux">
-                <Redux />
-              </Route>
-              <Route path="/">
-                <Home />
-              </Route>
-            </Switch>
-          </Main>
-        </div>
-      </Router>
-    </QueryClientProvider>
+    <Provider store={store}>
+      <QueryClientProvider client={queryClient}>
+        <Router>
+          <div>
+            <Nav>
+              <NavItem path="/">Home</NavItem>
+              <NavItem path="/query">Query</NavItem>
+              <NavItem path="/redux">Redux</NavItem>
+            </Nav>
+            <Main>
+              <Switch>
+                <Route path="/query">
+                  <Query />
+                </Route>
+                <Route path="/redux">
+                  <Redux />
+                </Route>
+                <Route path="/">
+                  <Home />
+                </Route>
+              </Switch>
+            </Main>
+          </div>
+        </Router>
+      </QueryClientProvider>
+    </Provider>
   );
 }
 
