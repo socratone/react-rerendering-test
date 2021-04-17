@@ -25,6 +25,7 @@ const Query = () => {
 
   return (
     <div>
+      <h1>QUERY</h1>
       <p>{data.title}</p>
       <Button onClick={handleClick}>Like {like}</Button>
     </div>
