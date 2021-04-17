@@ -7,8 +7,12 @@ const About = () => {
 
   const [like, setLike] = useState(0);
 
-  const { isLoading, error, data } = useQuery('korean', () =>
-    fetch('https://koreanjson.com/posts/1').then((res) => res.json())
+  const { isLoading, error, data } = useQuery(
+    'korean',
+    () => fetch('https://koreanjson.com/posts/1').then((res) => res.json()),
+    {
+      staleTime: Infinity, // fetch를 다시 하지 않는다.
+    }
   );
 
   const handleClick = () => {
