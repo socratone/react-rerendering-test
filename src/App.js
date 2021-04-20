@@ -9,6 +9,7 @@ import Home from './components/Home';
 import Query from './components/Query';
 import Redux from './components/Redux';
 import Memo from './components/Memo';
+import AsyncMutate from './components/AsyncMutate';
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ function App() {
               <NavItem path="/query">Query</NavItem>
               <NavItem path="/redux">Redux</NavItem>
               <NavItem path="/memo">Memo</NavItem>
+              <NavItem path="/async">Async</NavItem>
             </Nav>
             <Main>
               <Switch>
@@ -36,6 +38,9 @@ function App() {
                 </Route>
                 <Route path="/memo">
                   <Memo />
+                </Route>
+                <Route path="/async">
+                  <AsyncMutate />
                 </Route>
                 <Route path="/">
                   <Home />
