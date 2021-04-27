@@ -6,6 +6,7 @@ const AsyncMutate = () => {
   console.log('AsyncMutate 컴포넌트 호출');
 
   const postUser = (user) => {
+    console.log('user:', user);
     return fetch('https://koreanjson.com/users', {
       method: 'POST',
       headers: {
@@ -20,8 +21,10 @@ const AsyncMutate = () => {
   const mutation = useMutation(postUser);
 
   const handleClick = async () => {
+    const user = { username: 'John' };
+    
     try {
-      const result = await mutation.mutateAsync({ username: 'John' });
+      const result = await mutation.mutateAsync(user);
       console.log('result:', result);
     } catch (error) {
       console.error(error);

@@ -10,6 +10,7 @@ import Query from './components/Query';
 import Redux from './components/Redux';
 import Memo from './components/Memo';
 import AsyncMutate from './components/AsyncMutate';
+import Refetch from './components/Refetch';
 
 const queryClient = new QueryClient();
 
@@ -27,6 +28,7 @@ function App() {
               <NavItem path="/redux">Redux</NavItem>
               <NavItem path="/memo">Memo</NavItem>
               <NavItem path="/async">Async</NavItem>
+              <NavItem path="/refetch">Refetch</NavItem>
             </Nav>
             <Main>
               <Switch>
@@ -41,6 +43,9 @@ function App() {
                 </Route>
                 <Route path="/async">
                   <AsyncMutate />
+                </Route>
+                <Route path="/refetch">
+                  <Refetch />
                 </Route>
                 <Route path="/">
                   <Home />
