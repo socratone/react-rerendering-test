@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools'
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import Nav from './components/Nav';
@@ -11,6 +12,7 @@ import Redux from './components/Redux';
 import Memo from './components/Memo';
 import AsyncMutate from './components/AsyncMutate';
 import Refetch from './components/Refetch';
+import PreservedQueryKey from './components/PreservedQueryKey';
 
 const queryClient = new QueryClient();
 
@@ -25,6 +27,7 @@ function App() {
             <Nav>
               <NavItem path="/">Home</NavItem>
               <NavItem path="/query">Query</NavItem>
+              <NavItem path="/preserved">PreservedQuery</NavItem>
               <NavItem path="/redux">Redux</NavItem>
               <NavItem path="/memo">Memo</NavItem>
               <NavItem path="/async">Async</NavItem>
@@ -47,6 +50,9 @@ function App() {
                 <Route path="/refetch">
                   <Refetch />
                 </Route>
+                <Route path="/preserved">
+                  <PreservedQueryKey />
+                </Route>
                 <Route path="/">
                   <Home />
                 </Route>
@@ -54,6 +60,7 @@ function App() {
             </Main>
           </div>
         </Router>
+        <ReactQueryDevtools initialIsOpen={false} />
       </QueryClientProvider>
     </Provider>
   );
